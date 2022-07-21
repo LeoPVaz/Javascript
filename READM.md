@@ -1,0 +1,1 @@
+Repositório javascript para estudo da linguagem.
