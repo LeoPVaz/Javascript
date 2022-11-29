@@ -1,14 +1,12 @@
-.cor1 {
-    background-color: yellowgreen;
-    color: darkred;
+.azul {
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
 }
 
-.cor2 {
-    background-color: black;
-    color: aquamarine;
-}
+.vermelho {
+    background-color: red;
+    color: white;
+    border-radius: 10px;
 
-.cor3 {
-    background-color: cornflowerblue;
-    color: yellowgreen;
 }
