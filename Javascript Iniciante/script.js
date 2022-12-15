@@ -1,19 +1,13 @@
-function clicou() {
-    const button = document.querySelector('button');
+function apertou() {
+    console.log("APERTOU!");
+};
 
-    /*if (button.classList.contains("vermelho")) {
-        button.classList.remove("vermelho");
-        button.classList.add("azul");
-    } else {
-        button.classList.add("vermelho");
-        button.classList.remove("azul");
-    }*/
+function segurou() {
+    console.log("SEGUROU!");
+};
 
+function soutou() {
+    console.log("SOUTOU");
+};
 
-    if(button.classList.contains('vermelho')){
-        button.classList.replace('vermelho', 'azul');
-    }else{
-        button.classList.replace("azul","vermelho")
-    }
-}
-
+document.addEventListener("keypress", segurou);
