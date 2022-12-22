@@ -1,3 +1,4 @@
+/* header */
 .menu {
     position: relative;
 
@@ -60,6 +61,10 @@
     opacity: 1;
 }
 
+/* header end */
+
+/* Body */
+
 main {
     display: flex;
     flex-direction: row;
@@ -81,6 +86,39 @@ a {
     color: brown;
 }
 
+button {
+    margin: 5px;
+    padding: 5px;
+    width: 160px;
+    height: 30px;
+    border-radius: 5px 5px;
+    border: none;
+    background-color: rgb(0, 0, 0);
+}
+
+footer {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.corpo {
+    color: #000;
+    background-color: rgb(240, 240, 240);
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 400px;
+    height: 750px;
+    border-radius: 20px 20px;
+    text-align: center;
+    box-shadow: 10px 10px 3px black;
+   
+}
+
+/* body end */
+
+/* page Home */
 .tex-principal {
     background-color: rgb(240, 240, 240);
     text-align: center;
@@ -97,17 +135,38 @@ a {
     color: #fff;
 }
 
-.corpo {
+/* page Home end */
+
+/* page Metabolismo Basal */
+
+.metabolismo {
     color: #fff;
-    background-color: rgb(190, 0, 0);
+    background-color: rgb(55, 55, 55);
+    height: 250px;
     padding: 15px;
-    margin-bottom: 20px;
-    width: 400px;
-    height: 750px;
-    border-radius: 20px 20px;
+    display: block;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 10px 10px 3px black;
+
+    
 }
+
+.biotipo{
+    display:grid;
+    padding: 3px; 
+}
+
+
+.biotipo_in{
+    margin:0;
+    display: block;
+}
+
+/* page Metabolismo Basal end */
+
+/* page Carga Total */
+
+
 
 .texto_exercicio {
     margin: 10px;
@@ -121,7 +180,8 @@ a {
 }
 
 .exercicio {
-    background-color: rgb(0, 0, 0);
+    color: #fff;
+    background-color: rgb(55, 55, 55);
     padding: 8px;
     border-radius: 10px;
 }
@@ -138,18 +198,4 @@ a {
     width: 40px;
 }
 
-button {
-    margin: 5px;
-    padding: 5px;
-    width: 160px;
-    height: 30px;
-    border-radius: 5px 5px;
-    border: none;
-}
-
-footer {
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
+/* page Carga Total end */
