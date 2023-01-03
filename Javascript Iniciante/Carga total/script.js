@@ -4,3 +4,6 @@ function total(carga, series, repeticoes) {
 }
 
 total(50, 4, 12);
+
+
+
