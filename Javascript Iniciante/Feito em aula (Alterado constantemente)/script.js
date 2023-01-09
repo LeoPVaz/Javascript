@@ -1,13 +1,10 @@
-function apertou() {
-    console.log("APERTOU!");
-};
+const caucular = () => {
+    const carga = document.getElementById("carga").value;
+    const series = document.getElementById("series").value;
+    const repeticoes = document.getElementById("repeticoes").value;
 
-function segurou() {
-    console.log("SEGUROU!");
-};
+    const soma = parseFloat(carga) * parseFloat(series) * parseFloat(repeticoes);
 
-function soutou() {
-    console.log("SOUTOU");
-};
+    document.getElementById("resultado").innerHTML = "Resultado: " + soma;
 
-document.addEventListener("keypress", segurou);
+};
