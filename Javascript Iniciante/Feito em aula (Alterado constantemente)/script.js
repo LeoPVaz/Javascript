@@ -7,6 +7,7 @@ function clicou() {
             alert(`Titulo do Primero post: ${json[0].title}`)
         })
 }
+ 
 
 
 document.querySelector("#botao").addEventListener('click', clicou)
