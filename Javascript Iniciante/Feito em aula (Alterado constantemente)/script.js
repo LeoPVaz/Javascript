@@ -19,7 +19,7 @@ async function inserir() {
             body: "Corpo de teste",
             userId: 2
         })
-}
+})};
 
 
 document.querySelector("#botao").addEventListener('click', clicou)
