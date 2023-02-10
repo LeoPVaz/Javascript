@@ -1,0 +1,24 @@
+.conteiner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    border: none;
+    width: 150px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
+button:hover{
+
+    background-color: darkred;
+}
+button:active{
+    transform: scale(0.9);
+}
+img{
+    width: 250px;
+}
