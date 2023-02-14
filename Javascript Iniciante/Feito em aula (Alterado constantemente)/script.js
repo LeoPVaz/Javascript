@@ -1,25 +1,45 @@
-async function clicou() {
-    // GET, POST, PUT, DELETE
+//Primero Grupo
+document.querySelector(".texto").offsetWidth;
+document.querySelector(".texto").offsetHeight;
+// leva em consideração não só a largura do elemento e altura mas também as dimensões do scroll, da borda e do padding.
 
-    let response = await fetch("https://jsonplaceholder.typicode.com/posts")
-    let json = await response.json();
-    alert(`Titulo do Primero post: ${json[0].title}`)
-  
-    alert("CLICOU!")
-};
+//Segundo Grupo
+document.querySelector(".texto").clientWidth;
+document.querySelector(".texto").clientHeight;
+// Pega as dimensões do conteudo e do padding, não pega as dimensões da barra de rolagem nem a borda nem a margem.
 
-async function inserir() {
-   let response = await fetch('https://jsonplaceholder.typicode.com/posts', {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            title: 'Titulo de teste',
-            body: "Corpo de teste",
-            userId: 2
-        })
-})};
+//Terceiro Grupo
+document.querySelector(".texto").scrollWidth;
+document.querySelector(".texto").scrollHeight;
+// Ele pegar o valor total do conteudo, ou seja o tamanho real do conteudo.
 
+//Distâncias e Scroll Suave
+document.querySelector(".texto").scrollTop;
+document.querySelector(".texto").scrollLeft;
+// Seleciona o scroll do elemento sendo scrollTop: para o scroll na vertical, scrollLeft o scroll na horizontal.
 
-document.querySelector("#botao").addEventListener('click', clicou)
+//Temos também como selecionar o scroll da pagia:
+window.scrollY;
+window.scrollX;
+// Dessa forma pegando o scroll da tela, sendo scrollY para a vertical e scrollX para horizontal.
+
+//Podemos manicular o scroll:
+document.querySelector(".texto").scrollTo(0, 0);
+window.scrollTo(0, 0);
+// Usando scrollTo() podemos manicular a possição do scroll sendo o eixo X a piremeira declaração e o y a segunda.
+
+function subirTela() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+function botaoScroll(){
+    if(window.scrollY === 0){
+        document.querySelector(".scrollbutton").style.display = "none";
+    }else{
+        document.querySelector(".scrollbutton").style.display = "block";
+    }
+}
+window.addEventListener('scroll', botaoScroll);
