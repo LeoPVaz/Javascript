@@ -1,5 +1,5 @@
 // Knight ou Sorcerer - Guerreiro ou Mago
-// LittleMonster ou BigMosnter
+// LittleMonster ou BigMonster
 
 class Character {
     _life = 1;
@@ -52,7 +52,7 @@ class LittleMonster extends Character {
 
 class BigMosnter extends Character {
     constructor() {
-        super("Big Mosnter");
+        super("Big Monster");
         this.life = 120;
         this.attack = 16;
         this.defense = 6;
@@ -71,13 +71,42 @@ class Stage {
     start(){
        this.update();
        //TODO: Evento do botão de atacar.
+
+       this.fighter1El.querySelector(".atteckButton").addEventListener("click", () => this.doAttack(this.fighter1,this.fighter2))
+       this.fighter2El.querySelector(".atteckButton").addEventListener("click", () => this.doAttack(this.fighter2,this.fighter1))
     }
 
     update(){
         //Fighter 1
-        this.fighter1El.querySelector('.name').innerHTML = this.fighter1.name;
+        this.fighter1El.querySelector('.name').innerHTML =`${this.fighter1.name} - ${this.fighter1.life.toFixed(1)} HP` ;
+        let f1pct = (this.fighter1.life / this.fighter1.maxLife) * 100;
+        this.fighter1El.querySelector('.bar').style.width = `${f1pct}%`;
 
         //Fighter 2
-        this.fighter2El.querySelector('.name').innerHTML = this.fighter2.name;
+        this.fighter2El.querySelector('.name').innerHTML = `${this.fighter2.name} - ${this.fighter2.life.toFixed(1)} HP` ;
+        let f2pct = (this.fighter2.life / this.fighter2.maxLife) * 100;
+        this.fighter2El.querySelector('.bar').style.width = `${f2pct}%`;
+    }
+
+    doAttack(attacking, attacked){
+        if(attacking.life <= 0 || attacked.life <= 0){
+            console.log("Atacando cachoro morto");
+            return;
+        }
+
+        let attackFactor = (Math.random() * 2).toFixed(2);
+        let defenseFactor = (Math.random() * 2).toFixed(2);
+
+        let actualAttack = attacking.attack * attackFactor;
+        let actualDefense = attacked.defense * defenseFactor;
+
+        if(actualAttack > actualDefense){
+            attacked.life -= actualAttack;
+            console.log(`${attacking.name} causou ${actualAttack.toFixed(2)} de dano em ${attacked.name}`);
+        }else{
+            console.log(`${attacked.name} conseguiu defender...`);
+        }
+
+        this.update();
     }
 }
