@@ -68,22 +68,24 @@ const stage = {
 
         this.figther2El.querySelector('.atteckButton').addEventListener('click', () => this.doAttack(this.figther2, this.figther1));
 
-        this.update()
+        this.update();
     },
     update() {
         // Fighter 1
         this.figther1El.querySelector('.name').innerHTML = `${this.figther1.name} - ${this.figther1.life.toFixed(1)} HP`;
         let f1pct = (this.figther1.life / this.figther1.maxLife) * 100;
-        this.figther1El.querySelector('bar').style.width = `${f1pct}%`;
+        this.figther1El.querySelector('.bar').style.width = `${f1pct}%`;
         // Fighter 2
         this.figther2El.querySelector('.name').innerHTML = `${this.figther2.name} - ${this.figther2.life.toFixed(1)} HP`;
         let f2pct = (this.figther2.life / this.figther2.maxLife) * 100;
-        this.figther2El.querySelector('bar').style.width = `${f2pct}%`;
+        this.figther2El.querySelector('.bar').style.width = `${f2pct}%`;
         
         
     },
     doAttack(attacking, attecked) {
+        console.log(`${attacking.name} atacando ${attecked.name}`);
 
+        this.update();
     }
 
 }
