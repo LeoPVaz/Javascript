@@ -79,13 +79,48 @@ const stage = {
         this.figther2El.querySelector('.name').innerHTML = `${this.figther2.name} - ${this.figther2.life.toFixed(1)} HP`;
         let f2pct = (this.figther2.life / this.figther2.maxLife) * 100;
         this.figther2El.querySelector('.bar').style.width = `${f2pct}%`;
-        
-        
+
+
     },
     doAttack(attacking, attecked) {
-        console.log(`${attacking.name} atacando ${attecked.name}`);
+        if (attacking.life <= 0 || attecked.life <= 0) {
+            log.addMessage(`Alguém tá morto, não pode atacar.`);
+            return;
+        }
+
+        const attackFactor = (Math.random() * 2).toFixed(2);
+        const defenseFactor = (Math.random() * 2).toFixed(2);
+
+        const actualAttack = attacking.attack * attackFactor;
+        const actualDefense = attecked.defense * defenseFactor;
+
+        if (actualAttack > actualDefense) {
+            attecked.life -= actualAttack;
+            attecked.life = attecked.life < 0 ? 0 : attecked.life;
+            log.addMessage(`${attacking.name} causou ${actualAttack.toFixed(2)} de dano em ${attecked.name}`);
+        } else {
+            log.addMessage(`${attecked.name} conseguiu defender...`);
+        }
 
         this.update();
     }
 
 }
+
+const log = {
+    list: [],
+    addMessage(msg) {
+        this.list.push(msg);
+        this.render();
+    },
+    render() {
+        const logEl = document.querySelector('.log');
+        logEl.innerHTML = '';
+        for (let i in this.list) {
+            logEl.innerHTML += `<li>${this.list[i]}</li>`;
+        }
+
+    }
+}
+
+
