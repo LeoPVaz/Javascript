@@ -1,20 +1,11 @@
-const defaultUser = {
-    name: '',
-    email: '',
-    level: 1
-}
+let lista = ["Ovo", "Leite", "Chocolate em pó", "Farinha", "Fermento"];
 
-const user1 = {
-    ...defaultUser,
-    name: 'Anna',
-    email: 'Anna123@gamil.com'
-}
+lista[lista.length] = "Manteiga";
 
-const adm1 = {
-    ...defaultUser,
-    name: 'Adão',
-    email: 'AdãoADM@gamil.com',
-    level: 2
-}
+let res = lista.join("_");
 
-console.log(adm1)
+var div = document.querySelector("#minhaDiv");
+
+div.innerHTML += `<h1> ${res} </h1>`;
+
+console.log(res);
