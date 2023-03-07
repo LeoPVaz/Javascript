@@ -1,11 +1,17 @@
-let lista = ["Ovo", "Leite", "Chocolate em pó", "Farinha", "Fermento"];
+let lista = [
+    {id:1, nome:"Anna", sobrenome:"Schmidt"},
+    {id:2, nome:"Julia", sobrenome:"Blanc"},
+    {id:3, nome:"Laura", sobrenome:"Silva"}
+];
 
-lista[lista.length] = "Manteiga";
+let pessoa = lista.find(function(item){
+    return (item.sobrenome == "Blanc") ? true : false;
+})
 
-let res = lista.join("_");
+const obj = JSON.stringify(lista)
 
 var div = document.querySelector("#minhaDiv");
 
-div.innerHTML += `<h1> ${res} </h1>`;
+div.innerHTML += `<h1> ${obj} </h1>`;
 
-console.log(res);
+console.log(pessoa);
