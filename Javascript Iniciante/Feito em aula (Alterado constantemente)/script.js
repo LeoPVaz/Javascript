@@ -1,17 +1,11 @@
-let lista = [
-    {id:1, nome:"Anna", sobrenome:"Schmidt"},
-    {id:2, nome:"Julia", sobrenome:"Blanc"},
-    {id:3, nome:"Laura", sobrenome:"Silva"}
-];
+let d = new Date();
 
-let pessoa = lista.find(function(item){
-    return (item.sobrenome == "Blanc") ? true : false;
-})
+d.setDate(d.getDate() + 542)
 
-const obj = JSON.stringify(lista)
+let novoValor = d;
 
 var div = document.querySelector("#minhaDiv");
 
-div.innerHTML += `<h1> ${obj} </h1>`;
+div.innerHTML += `<h1> ${novoValor} </h1>`;
 
-console.log(pessoa);
+console.log(novoValor);
