@@ -9,12 +9,33 @@
 // div.innerHTML += `<h1> ${novoValor} </h1>`;
 
 // console.log(novoValor);
+// let timer;
 
-let num = Math.random(990794);
+// function comecar(){
+//     timer = setInterval(showTime, 1000) ;
+// }
+// function parar(){
+//     clearInterval(timer);
+// }
 
-let rdNum = Math.round(num);
 
 
-console.log(`${num} e um numero ALEATORIO! `)
+// function showTime() {
+//     let d = new Date();
+//     let h = d.getHours();
+//     let m = d.getMinutes();
+//     let s = d.getSeconds();
+//     let txt = h + ":" + m + ":" + s;
 
-console.log(`${rdNum} numero AREDONDADO! `)
+//     document.querySelector(".demo").innerHTML =`<h2> ${txt} </h2>`;
+// }
+
+let timer;
+function rodar(){
+    timer =setTimeout(function(){
+        document.querySelector(".demo").innerHTML= "Rodou!";
+    }, 2000);
+}
+function parar(){
+    clearInterval(timer);
+}
