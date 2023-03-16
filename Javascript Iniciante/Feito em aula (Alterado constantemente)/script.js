@@ -10,11 +10,19 @@
 
 // console.log(novoValor);
 
-let num = Math.random(990794);
+// let num = Math.random(990794);
 
-let rdNum = Math.round(num);
+// let rdNum = Math.round(num);
 
 
-console.log(`${num} e um numero ALEATORIO! `)
+// console.log(`${num} e um numero ALEATORIO! `)
 
-console.log(`${rdNum} numero AREDONDADO! `)
+// console.log(`${rdNum} numero AREDONDADO! `)
+
+let nome = "Anna";
+let idade = "20";
+
+let frase = `Meu nome e ${nome} e eu tenho ${idade} anos`;
+
+
+console.log(frase);
