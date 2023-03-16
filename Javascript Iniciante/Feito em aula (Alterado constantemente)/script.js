@@ -1,28 +1,25 @@
-// let d = new Date();
+// Descontruindo Objetos
 
-// d.setDate(d.getDate() + 542)
+let pessoa = {
+    nome: "Anna",
+    sobrenome: "Leite",
+    // idade: 19,
+    social:{
+        facebook:"AnnaMilk",
+        instagram:{
+            url:"@annaMilk",
+            seguidores:9800
+        }
+    },
+   
+};
 
-// let novoValor = d;
+function nomeCompleto ({nome, sobrenome}){
+    return `${nome} ${sobrenome}`;
+}
 
-// var div = document.querySelector("#minhaDiv");
+let {nome, sobrenome , idade = Math.floor(Math.random() * (20 - 10 + 1) + 10 ), social:{instagram:{url:instagram, seguidores}, facebook} } = pessoa;
 
-// div.innerHTML += `<h1> ${novoValor} </h1>`;
+console.log(nomeCompleto(pessoa))
 
-// console.log(novoValor);
-
-// let num = Math.random(990794);
-
-// let rdNum = Math.round(num);
-
-
-// console.log(`${num} e um numero ALEATORIO! `)
-
-// console.log(`${rdNum} numero AREDONDADO! `)
-
-let nome = "Anna";
-let idade = "20";
-
-let frase = `Meu nome e ${nome} e eu tenho ${idade} anos`;
-
-
-console.log(frase);
+console.log( `Meu nome é ${nome} ${sobrenome} e eu tenho ${idade}, me siga no Instagram ${instagram} ou no Facebook ${facebook}, eu tenho ${seguidores} seguidores no Instagram.`)
