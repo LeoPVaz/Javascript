@@ -28,34 +28,36 @@
 
 // let outros = [...numeros, 5,6,7,8];
 
-// let info = {
-//     nome: "Anna",
-//     sobrenome: "Leite",
-//     idade:Math.floor(Math.random * (30 - 20) +20) 
-// }
-
-// let novaInfo ={
-//     ...info,
-//     ciade:"Brasilia",
-//     estado:"DF",
-//     pais:"Brasil"
-// }
-
-// console.log(novaInfo)
-
-
-function adicionar(nome,...novosNomes){
-
-    let conjuto = [
-        ...nome,
-        ...novosNomes
-    ];
-
-    return conjuto
+let info = {
+    nome: "Anna",
+    sobrenome: "Leite",
+    idade: Math.floor(Math.random * (30 - 20) + 20)
 }
 
-let nome = ["Anna", "Julia", "Laura"];
+let novaInfo = {
+    ...info,
+    ciade: "Brasilia",
+    estado: "DF",
+    pais: "Brasil"
+}
 
-let outros = adicionar(nome, "Paulo", "Lucios","Arnold")
+console.log(Object.keys(novaInfo));
+console.log(Object.values(novaInfo));
+console.log(Object.entries(novaInfo));
 
-console.log(outros)
+
+// function adicionar(nome,...novosNomes){
+
+//     let conjuto = [
+//         ...nome,
+//         ...novosNomes
+//     ];
+
+//     return conjuto
+// }
+
+// let nome = ["Anna", "Julia", "Laura"];
+
+// let outros = adicionar(nome, "Paulo", "Lucios","Arnold")
+
+// console.log(outros)
