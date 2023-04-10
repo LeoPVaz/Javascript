@@ -28,22 +28,22 @@
 
 // let outros = [...numeros, 5,6,7,8];
 
-let info = {
-    nome: "Anna",
-    sobrenome: "Leite",
-    idade: Math.floor(Math.random * (30 - 20) + 20)
-}
+// let info = {
+//     nome: "Anna",
+//     sobrenome: "Leite",
+//     idade: Math.floor(Math.random * (30 - 20) + 20)
+// }
 
-let novaInfo = {
-    ...info,
-    ciade: "Brasilia",
-    estado: "DF",
-    pais: "Brasil"
-}
+// let novaInfo = {
+//     ...info,
+//     ciade: "Brasilia",
+//     estado: "DF",
+//     pais: "Brasil"
+// }
 
-console.log(Object.keys(novaInfo));
-console.log(Object.values(novaInfo));
-console.log(Object.entries(novaInfo));
+// console.log(Object.keys(novaInfo));
+// console.log(Object.values(novaInfo));
+// console.log(Object.entries(novaInfo));
 
 
 // function adicionar(nome,...novosNomes){
@@ -61,3 +61,25 @@ console.log(Object.entries(novaInfo));
 // let outros = adicionar(nome, "Paulo", "Lucios","Arnold")
 
 // console.log(outros)
+
+async function loadPosts() {
+    document.getElementById("posts").innerHtml = "Carregando....";
+
+    let req = await fetch("https://jsonplaceholder.typicode.com/posts");
+    let json = await req.json();
+    montarBlog(json);
+       
+}
+
+function montarBlog(lista){
+    let html = "";
+
+    for(let i = 0; i<lista.length;i++){
+        html+= "<h3>"+lista[i].title+"</h3>";
+        html+= lista[i].body+"<br/>"
+        html+= "<hr/>";
+    }
+
+    document.getElementById("posts").innerHTML = html;
+
+}
