@@ -62,24 +62,20 @@
 
 // console.log(outros)
 
-async function loadPosts() {
-    document.getElementById("posts").innerHtml = "Carregando....";
+function mostrar() {
+    let reader = new FileReader();
 
-    let req = await fetch("https://jsonplaceholder.typicode.com/posts");
-    let json = await req.json();
-    montarBlog(json);
-       
-}
+    let imagem = document.getElementById("imagem").files[0];
 
-function montarBlog(lista){
-    let html = "";
+    reader.onload = function(){
+        let img = document.createElement('img');
+        img.src = reader.result;
+        img.width = 200;
 
-    for(let i = 0; i<lista.length;i++){
-        html+= "<h3>"+lista[i].title+"</h3>";
-        html+= lista[i].body+"<br/>"
-        html+= "<hr/>";
+        document.getElementById("area").appendChild(img);
     }
 
-    document.getElementById("posts").innerHTML = html;
+    reader.readAsDataURL(imagem);
+
 
 }
