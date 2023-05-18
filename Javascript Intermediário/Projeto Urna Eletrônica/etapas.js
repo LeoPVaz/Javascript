@@ -27,18 +27,18 @@ let etapas = [
         candidatos: [
             {
                 numero: "99",
-                name: "Fernada Café",
+                nome: "Fernada Café",
                 partido: "WST",
                 vice: "João Fernades",
-                fotos: [{ url: "99.png", legenda: "Prefeita"},
+                foto: [{ url: "99.png", legenda: "Prefeita"},
             {url:"99_2.png",legenda:"Vice-Prefeito", small: true}]
             },
             {
                 numero: "84",
-                name: "Olivia Rio Preto",
+                nome: "Olivia Rio Preto",
                 partido: "GFT",
                 vice: "Laura Green",
-                fotos: [{ url: "84.png", legenda: "Prefeita"},
+                foto: [{ url: "84.png", legenda: "Prefeita"},
             {url:"84_2.png",legenda:"Vice-Prefeito", small: true}]
             }
         ]
