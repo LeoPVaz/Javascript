@@ -35,6 +35,18 @@ let Validador = {
                         }
                         break;
                     case "min":
+                        if (input.value.length < rDetails[1]) {
+                            return "Capo tem que ter no minimo" + " " + rDetails[1] + " " + "caracteris"
+                        }
+                        break;
+                    case "email":
+                        if(input.value != ""){
+                            let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                            if(!regex.test(input.value.toLowerCase())){
+                                return "E-mail digitado não é valido!"
+                            }
+
+                        }
                         break;
                 }
             }
@@ -52,12 +64,12 @@ let Validador = {
     },
     clearErrors: () => {
         let inputs = form.querySelectorAll("input");
-        for(i = 0; i < inputs.length; i++){
+        for (i = 0; i < inputs.length; i++) {
             inputs[i].style = "";
         }
 
         let erroElement = document.querySelectorAll(".error");
-        for (i = 0; i < erroElement.length; i++){
+        for (i = 0; i < erroElement.length; i++) {
             erroElement[i].remove();
         }
     }
