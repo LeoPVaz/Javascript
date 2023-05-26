@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background:#353535 ;
+}
+.violao{
+    display: flex;
+    flex-direction: column;
+    background: #be975b;
+    width: 100%;
+    height: 300px;
+    margin-top: 50px;
+}
+
+.corda{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+
+.corda::before{
+    content: "";
+    width: 100%;
+    height: 10px;
+    background: repeating-linear-gradient(50deg, rgba(0, 0, 0, .6), transparent 0.15em, transparent 0.2em), linear-gradient(180deg, rgba(0, 0, 0, .3) 10%, hsla(0, 0%, 100%, .25) 15%, hsla(0, 0%, 100%, .8) 30%, hsla(0, 0%, 100%, .25) 45%, rgba(0, 0, 0, .6) 90%);
+    box-shadow: 76px 3px 18px #806233;
+}
