@@ -28,3 +28,29 @@ body{
     background: repeating-linear-gradient(50deg, rgba(0, 0, 0, .6), transparent 0.15em, transparent 0.2em), linear-gradient(180deg, rgba(0, 0, 0, .3) 10%, hsla(0, 0%, 100%, .25) 15%, hsla(0, 0%, 100%, .8) 30%, hsla(0, 0%, 100%, .25) 45%, rgba(0, 0, 0, .6) 90%);
     box-shadow: 76px 3px 18px #806233;
 }
+
+.vibracao{
+    animation: vibracao 0.35s ;
+}
+
+/* Animação de vibração */
+@keyframes vibracao {
+    0% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(-3px);
+    }
+    40% {
+      transform: translateY(8px);
+    }
+    60% {
+      transform: translateY(-23px);
+    }
+    80% {
+      transform: translateY(8px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
