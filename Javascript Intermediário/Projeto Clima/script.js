@@ -7,6 +7,7 @@ document.querySelector(".busca").addEventListener("submit", async (event) => {
 
     if (input !== "") {
         claerInfo();
+        
         showWarning("Carregando...")
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(input)}&appid=95d0315c872e0cbb81184f16031efd30&units=metric&lang=pt_br`;
 
@@ -16,6 +17,7 @@ document.querySelector(".busca").addEventListener("submit", async (event) => {
         console.log(json)
 
         if (json.cod === 200) {
+            
             showInfo({
                 name: json.name,
                 country: json.sys.country,
@@ -27,6 +29,7 @@ document.querySelector(".busca").addEventListener("submit", async (event) => {
                 windSpeed: json.wind.speed,
                 windAngle: json.wind.deg
             });
+            tempBk(json.main.temp);
         } else {
             claerInfo();
             showWarning("Não emcontramos esta localização.");
@@ -36,9 +39,13 @@ document.querySelector(".busca").addEventListener("submit", async (event) => {
     }
 });
 
-function tempBk(json){
-    if(30 == json.temp){
-        document.querySelector("body").style.backgroundColor = "red";
+function tempBk(temperatura){
+    if( temperatura >= 30){
+         document.querySelector("body").style.backgroundColor = "red";
+    }else if(temperatura >= 20){
+        document.querySelector("body").style.backgroundColor = "orange";
+    }else {
+        document.querySelector("body").style.backgroundColor = "blue";
     }
 }
 
