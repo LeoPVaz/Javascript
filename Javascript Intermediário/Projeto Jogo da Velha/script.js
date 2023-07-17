@@ -8,7 +8,8 @@ let square = {
 let player = "";
 let warning = "";
 let playing = false;
-
+let winX = 0;
+let winO = 0;
 reset()
 // Events
 document.querySelector(".reset").addEventListener("click", reset);
@@ -63,12 +64,18 @@ function togglePlayer() {
     renderInfo()
 }
 
+
 function checkGame() {
     if (checkWinnerFor("x")) {
         warning = 'O "x" venceu';
+        winX++;
+        document.querySelector(".placarX").innerHTML = `X: ${winX}`;
         playing = false;
+
     } else if (checkWinnerFor('o')) {
-        warning = 'O "o" venceu'
+        warning = 'O "o" venceu';
+        winO++;
+        document.querySelector(".placarO").innerHTML = `O: ${winO}`;
         playing = false;
     } else if (isFull()) {
         warning = "Deu empate";
