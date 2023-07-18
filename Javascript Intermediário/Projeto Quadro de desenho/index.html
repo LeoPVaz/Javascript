@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,11 @@
     <title>Desenhando no Canvas</title>
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <h1>Desenhando no Canvas</h1>
+    <div class="title">
+        <h1>Desenhando no Canvas</h1>
+    </div>
 
     <canvas id="tela" width="800" height="400"></canvas>
 
@@ -21,10 +25,16 @@
         <div data-color="gray" style="background-color: gray" class="color"></div>
     </div>
 
+    <div class="menu">
+        <div class="tools"></div>
+        <div class="color"></div>
+    </div>
+
     <button class="clear">Limpar Quadro</button>
 
     <footer>Criado pela B7Web</footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
