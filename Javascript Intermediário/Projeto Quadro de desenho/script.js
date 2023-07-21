@@ -13,6 +13,14 @@ document.querySelectorAll(".colorArea .color").forEach(item => {
     // item.addEventListener("click", colorClickEvent);
 
 });
+
+document.querySelector(".eraser").addEventListener("click", () => toggleEraser(true));
+document.querySelector(".icon").addEventListener("click", () =>{
+    document.getElementById("#colorPicker");
+});
+document.getElementById("#colorPicker").addEventListener("change", () =>{
+    var currentColor  = this.value;
+})
 screen.addEventListener("mousedown", mouseDownEvent);
 screen.addEventListener("mousemove", mouseMoveEvent);
 screen.addEventListener("mouseup", mauseUpEvent);
@@ -28,6 +36,16 @@ function colorInputEvent(e){
 //     document.querySelector(".color.active").classList.remove("active");
 //     e.target.classList.add("active");
 // }
+
+function toggleEraser(erase){
+    isErasing = erase;
+
+    if(isErasing){
+        currentColor = "white";
+    }
+}
+    
+
 
 function mouseDownEvent(e) {
     canDraw = true;

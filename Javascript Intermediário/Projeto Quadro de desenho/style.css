@@ -19,27 +19,46 @@ h1 {
     margin-bottom: 20px;
 }
 h2{
-    color: #FFF;
+    margin-top: 10px;
+   font-size: 15px;
 }
 
 a{
     color: #FFF;
 }
 
+.icon{
+ width: 50px;
+ margin-top: 20px;
+ cursor: pointer;
+}
 #tela {
     border: 2px solid #000;
     background-color: #FFF;
     cursor: crosshair;
 }
-
-.colorArea {
-    width: 800px;
+.menu{
+    margin-top: 10px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    width: 54%;
+    padding: 20px;
+}
+.colorArea {
+    width: 120px;
+    display: flex;
+
 }
 .color {
     flex: 1;
-    height: 40px;
+    height: 50px;
     cursor: pointer;
+    margin-top: 20px;
+    display: none;
+    
 }
 .color.active {
     border: 5px solid #FFF;
