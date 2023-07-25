@@ -3,6 +3,8 @@ let currentColor = "black";
 let canDraw = false;
 let mouseX = 0;
 let mouseY = 0;
+let lastUsedColor = "";
+let lastUsedNonEraserColor = "black";
 
 let screen = document.querySelector("#tela");
 let ctx = screen.getContext("2d");
@@ -14,22 +16,31 @@ document.querySelectorAll(".colorArea .color").forEach(item => {
 
 });
 
+document.querySelector(".last-color").addEventListener("click", selectLastUsedColor);
+
 document.querySelector(".eraser").addEventListener("click", () => toggleEraser(true));
-document.querySelector(".icon").addEventListener("click", () =>{
-    document.getElementById("#colorPicker");
-});
-document.getElementById("#colorPicker").addEventListener("change", () =>{
-    var currentColor  = this.value;
-})
+
+
 screen.addEventListener("mousedown", mouseDownEvent);
 screen.addEventListener("mousemove", mouseMoveEvent);
 screen.addEventListener("mouseup", mauseUpEvent);
 document.querySelector(".clear").addEventListener("click", claerScreen);
 
 // Functions
-function colorInputEvent(e){
+function colorInputEvent(e) {
     currentColor = e.target.value;
+    lastUsedColor = currentColor;
+
 }
+
+function selectLastUsedColor() {
+    currentColor = lastUsedColor
+    if (lastUsedColor !== "white") {
+        document.querySelector(".last-color").style.backgroundColor = currentColor;
+    }
+
+}
+
 // function colorClickEvent(e) {
 //     let color = e.target.getAttribute("data-color");
 //     currentColor = color;
@@ -37,20 +48,23 @@ function colorInputEvent(e){
 //     e.target.classList.add("active");
 // }
 
-function toggleEraser(erase){
+function toggleEraser(erase) {
     isErasing = erase;
 
-    if(isErasing){
+    if (isErasing) {
         currentColor = "white";
     }
 }
-    
+
 
 
 function mouseDownEvent(e) {
     canDraw = true;
     mouseX = e.pageX - screen.offsetLeft;
     mouseY = e.pageY - screen.offsetTop;
+    document.querySelector(".last-color").style.backgroundColor = currentColor;
+
+
 }
 
 function mouseMoveEvent(e) {
