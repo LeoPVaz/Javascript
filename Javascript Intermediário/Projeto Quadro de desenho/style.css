@@ -18,26 +18,32 @@ h1 {
     color: #FFF;
     margin-bottom: 20px;
 }
-h2{
+
+h2 {
     margin-top: 10px;
-   font-size: 15px;
+    font-size: 15px;
+    margin-bottom: -13px;
 }
 
-a{
+a {
     color: #FFF;
 }
 
-.icon{
- width: 50px;
- margin-top: 20px;
- cursor: pointer;
+.icon {
+    width: 50px;
+    margin-top: 20px;
+    cursor: pointer;
 }
+
 #tela {
     border: 2px solid #000;
     background-color: #FFF;
     cursor: crosshair;
+    width: 100%;
+
 }
-.menu{
+
+.menu {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
@@ -46,12 +52,15 @@ a{
     background-color: #FFF;
     width: 54%;
     padding: 20px;
+    border-radius: 10px;
 }
+
 .colorArea {
     width: 120px;
     display: flex;
 
 }
+
 .color {
     flex: 1;
     height: 50px;
@@ -59,11 +68,11 @@ a{
     margin-top: 20px;
 }
 
-.last-color{
+.last-color {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top:20px ;
+    margin-top: 20px;
     height: 50px;
     width: 100%;
     cursor: pointer;
@@ -89,4 +98,10 @@ footer {
     margin-top: 20px;
     color: #FFF;
     font-size: 13px;
+}
+
+@media (max-width=420px) {
+    .menu {
+        width: 100%;
+    }
 }
