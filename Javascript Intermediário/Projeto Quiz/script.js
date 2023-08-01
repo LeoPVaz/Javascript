@@ -70,7 +70,7 @@ function finishQuiz(){
     document.querySelector(".progress--bar").style.width ="100%";
 
 }
-
+''
 function resetEvent(){
     correctAnswers = 0;
     currentQuestion = 0;
